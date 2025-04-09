@@ -16,7 +16,7 @@ Questão 3. Gere a lista de todas as seções de curso oferecidas na primavera d
 Se uma seção tiver mais de 1 instrutor, ela deverá aparecer uma vez no resultado para cada instrutor. Se não tiver instrutor algum, ela ainda deverá aparecer no resultado, com o nome do instrutor definido como “-”.
 */
 
-select teaches.course_id, teaches.sec_id, instructor.id as ID, teaches.semester, teaches.year, case when instructor.name is null then '-' else instructor.name end as instrutor from instructor right join teaches on instructor.ID = teaches.ID where teaches.semester = 'Spring' and teaches.year = 2010 order by teaches.course_id Asc;
+select teaches.course_id, teaches.sec_id, instructor.id as ID, teaches.semester, teaches.year, case when instructor.name is null then '-' else instructor.name end as instrutor from instructor right join teaches on instructor.ID = teaches.ID where teaches.semester = 'Spring' and teaches.year = 2010 order by teaches.course_id asc;
 /*
 Questão 4. Suponha que você tenha recebido uma relação grade_points (grade, points), que oferece uma conversão de conceitos (letras) na relação takes para notas numéricas; por exemplo, 
 uma nota “A+” poderia ser especificada para corresponder a 4 pontos, um “A” para 3,7 pontos, e “A-” para 3,4, e “B+” para 3,1 pontos, e assim por diante. 
